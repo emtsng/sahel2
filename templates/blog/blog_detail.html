@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ post.title }} — {{ site_name }}{% endblock %}
+{% block content %}
+{% include 'partials/page_title.html' %}
+<section class="wpo-blog-single-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+                <div class="wpo-blog-content">
+                    <div class="post format-standard-image">
+                        <div class="entry-media">
+                            <img src="{% static post.image %}" alt="">
+                        </div>
+                        <div class="entry-meta">
+                            <ul>
+                                <li><i class="fi flaticon-user"></i> By <a href="#">{{ post.author }}</a></li>
+                                <li><i class="fi flaticon-comment-white-oval-bubble"></i> Comments {{ post.comments }}</li>
+                                <li><i class="fi flaticon-calendar"></i> {{ post.date_display }}</li>
+                            </ul>
+                        </div>
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ post.body_lead }}</p>
+                        <blockquote>
+                            {{ site_name }} helps teams prioritize visibility, access control, and operational continuity before attackers find the weak link.
+                        </blockquote>
+                        <p>Start with asset inventory, segment networks, and rehearse response playbooks with the people who actually run the plant.</p>
+                        <div class="gallery">
+                            <div>
+                                <img src="{% static 'assets/images/blog-details/1.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tag-share clearfix">
+                        <div class="tag">
+                            <span>Topics: </span>
+                            <ul>
+                                <li><a href="{% url 'blog:list' %}">Industrial security</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="author-box">
+                        <div class="author-avatar">
+                            <a href="{% url 'blog:list' %}"><img src="{% static 'assets/images/blog-details/author.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="author-content">
+                            <a href="{% url 'blog:list' %}" class="author-name">Author: {{ post.author }}</a>
+                            <p>Editorial notes from the {{ site_name }} team on operations, safety, and technology.</p>
+                        </div>
+                    </div>
+                    <div class="more-posts">
+                        <div class="previous-post">
+                            <a href="{% url 'blog:list' %}">
+                                <span class="post-control-link">Back to blog</span>
+                                <span class="post-name">More articles from {{ site_name }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="comments-area">
+                        <div class="comments-section">
+                            <h3 class="comments-title">{{ comments|length }} comment</h3>
+                            <ol class="comments">
+                                {% for c in comments %}
+                                <li class="comment">
+                                    <div class="comment-theme">
+                                        <div class="comment-image"><img src="{% static c.image %}" alt=""></div>
+                                    </div>
+                                    <div class="comment-main-area">
+                                        <div class="comment-wrapper">
+                                            <div class="comments-meta">
+                                                <h4>{{ c.author }} <span class="comments-date">says {{ c.date }}</span></h4>
+                                            </div>
+                                            <div class="comment-area">
+                                                <p>{{ c.body }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Shop — {{ site_name }}{% endblock %}
+{% block content %}
+{% include 'partials/page_title.html' %}
+<section class="wpo-shop-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="shop-grids clearfix">
+                    {% for product in products %}
+                    <div class="grid">
+                        <div class="img-holder">
+                            <img src="{% static product.image %}" alt="">
+                        </div>
+                        <div class="details">
+                            <h3><a href="{% url 'shop:detail' product.id %}">{{ product.title }}</a></h3>
+                            <del>{{ product.price_old }}</del><span>{{ product.price }}</span>
+                            <div class="add-to-cart">
+                                <a href="{% url 'shop:detail' product.id %}">View product <i class="ti-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

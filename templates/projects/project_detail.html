@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ project.title }} — {{ site_name }}{% endblock %}
+{% block content %}
+{% include 'partials/page_title.html' %}
+<div class="wpo-project-single-area section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-12">
+                <div class="wpo-project-single-wrap">
+                    <div class="wpo-project-single-item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7">
+                                <div class="wpo-project-single-title">
+                                    <h3>{{ project.title }}</h3>
+                                </div>
+                                <p>{{ site_name }} delivered this engagement with coordinated engineering, procurement support, and disciplined site execution.</p>
+                                <p>Stakeholders received weekly readouts, punch-list transparency, and a structured turnover package for operations.</p>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="wpo-project-single-content-des-right">
+                                    <ul>
+                                        {% for label, value in project.meta %}
+                                        <li>{{ label }} :<span>{{ value }}</span></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpo-project-single-main-img">
+                            {% for img in project.hero_images %}
+                            <img src="{% static img %}" alt="">
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="wpo-project-single-item list-widget">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="wpo-project-single-title">
+                                    <h3>Our strategies</h3>
+                                </div>
+                                <p>We sequence work to protect production uptime, isolate hazards, and keep documentation audit-ready.</p>
+                                <ul>
+                                    <li>Integrated safety briefings per shift.</li>
+                                    <li>Change control for scope and schedule.</li>
+                                    <li>Quality checks at hold points.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="wpo-project-single-item-quote">
+                                    <p>“{{ site_name }} kept the site organized and the narrative simple for our board.”</p>
+                                    <span>Partner — <span>Industrial client</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wpo-project-single-gallery">
+                        <div class="row mt-4">
+                            {% for img in project.gallery %}
+                            <div class="col-md-6 col-sm-6 col-12">
+                                <div class="wpo-p-details-img">
+                                    <img src="{% static img %}" alt="">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

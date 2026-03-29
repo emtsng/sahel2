@@ -1,0 +1,21 @@
+<section class="wpo-page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="wpo-breadcumb-wrap">
+                    <h2>{{ page_title }}</h2>
+                    <ol class="wpo-breadcumb-wrap">
+                        <li><a href="{% url 'core:home' %}">Home</a></li>
+                        {% for b in breadcrumbs %}
+                            {% if b.url %}
+                                <li><a href="{{ b.url }}">{{ b.label }}</a></li>
+                            {% else %}
+                                <li>{{ b.label }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

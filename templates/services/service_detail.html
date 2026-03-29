@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ service.title }} — {{ site_name }}{% endblock %}
+{% block content %}
+{% include 'partials/page_title.html' %}
+<div class="wpo-service-single-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <div class="wpo-service-single-wrap">
+                    <div class="wpo-service-single-item">
+                        <div class="wpo-service-single-main-img">
+                            <img src="{% static service.hero_image %}" alt="">
+                        </div>
+                        <div class="wpo-service-single-title">
+                            <h3>{{ service.title }}</h3>
+                        </div>
+                        <p>{{ service.excerpt }} Full delivery includes planning, procurement support, and field supervision aligned to {{ site_name }} standards.</p>
+                        <p>We document handoffs, maintain as-built packages, and train your operators on critical maintenance windows.</p>
+                        <div class="row mt-4">
+                            {% for img in service.gallery %}
+                            <div class="col-md-6 col-sm-6 col-12">
+                                <div class="wpo-p-details-img">
+                                    <img src="{% static img %}" alt="">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="wpo-service-single-item list-widget">
+                        <div class="wpo-service-single-title">
+                            <h3>Our capabilities</h3>
+                        </div>
+                        <p>Structured scopes, measurable milestones, and safety systems that scale with your site.</p>
+                        <ul>
+                            <li>Risk reviews tied to each work package.</li>
+                            <li>Transparent reporting for stakeholders.</li>
+                            <li>Commissioning checklists and turnover dossiers.</li>
+                        </ul>
+                    </div>
+                    {% if related_services %}
+                    <div class="wpo-service-single-item">
+                        <div class="wpo-service-single-title">
+                            <h3>Related services</h3>
+                        </div>
+                        <div class="wpo-service-area">
+                            <div class="row align-items-center">
+                                {% for r in related_services %}
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="wpo-service-item">
+                                        <i><img src="{% static r.icon %}" alt=""></i>
+                                        <h2><a href="{% url 'services:detail' r.id %}">{{ r.title }}</a></h2>
+                                        <p>{{ r.excerpt|truncatewords:16 }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="wpo-service-single-item">
+                        <div class="wpo-service-contact-area">
+                            <div class="wpo-contact-title">
+                                <h2>Have a project in mind?</h2>
+                                <p>Talk with {{ site_name }} about scope, schedule, and the right crew mix.</p>
+                            </div>
+                            <div class="wpo-contact-form-area">
+                                <form method="post" class="contact-validation-active" id="contact-form-main">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col col-lg-6 col-md-6 col-12">
+                                            <input type="text" class="form-control" name="name" placeholder="Your name*">
+                                        </div>
+                                        <div class="col col-lg-6 col-md-6 col-12">
+                                            <input type="email" class="form-control" name="email" placeholder="Your email*">
+                                        </div>
+                                        <div class="col col-lg-12 col-12">
+                                            <select name="service" class="form-control">
+                                                <option disabled selected>Services</option>
+                                                <option>{{ service.title }}</option>
+                                            </select>
+                                        </div>
+                                        <div class="fullwidth col col-lg-12 col-12">
+                                            <textarea class="form-control" name="note" placeholder="Message..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="submit-area">
+                                        <button type="submit" class="theme-btn-s4">Send message</button>
+                                        <div id="loader"><i class="ti-reload"></i></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="blog-sidebar">
+                    <div class="widget search-widget">
+                        <form action="#" method="get">
+                            <div>
+                                <input type="text" class="form-control" name="q" placeholder="Search">
+                                <button type="submit"><i class="ti-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="widget category-widget">
+                        <h3>Services</h3>
+                        <ul>
+                            {% for s in related_services %}
+                            <li><a href="{% url 'services:detail' s.id %}">{{ s.title }} <span>1</span></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

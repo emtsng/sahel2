@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About — {{ site_name }}{% endblock %}
+{% block content %}
+{% include 'partials/page_title.html' %}
+<div class="wpo-about-area section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 colsm-12">
+                <div class="wpo-about-text">
+                    <div class="wpo-about-title">
+                        <span class="sub">About Us</span>
+                        <h2>Built around <span>{{ site_name }}</span> values</h2>
+                    </div>
+                    <h5>We combine field experience with modern planning tools so owners see progress, risks, and options in plain language.</h5>
+                    <p>{{ site_name }} supports refineries, plants, and infrastructure teams with commissioning support, fabrication oversight, and lifecycle maintenance partners.</p>
+                    <p>Our crews train continuously on safety culture and documentation—because reliability is as important as speed.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="wpo-about-img">
+                    <img src="{% static 'assets/images/about.jpg' %}" alt="">
+                    <div class="wpo-about-item">
+                        <div class="wpo-about-top">
+                            <div class="wpo-about-thumb-img">
+                                <img src="{% static 'assets/images/about2.jpg' %}" alt="">
+                            </div>
+                            <div class="wpo-about-info">
+                                <div class="wpo-about-info-text">
+                                    <h2>{{ site_name }}</h2>
+                                    <span>Leadership team</span>
+                                </div>
+                                <div class="wpo-about-info-ratting">
+                                    <ul>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpo-about-content">
+                            <p>“Clear scopes, honest schedules, and crews who respect the gate rules.”</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wpo-service-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="wpo-section-title">
+                <p>Our services</p>
+                <h2>Where <span>{{ site_name }}</span> helps first</h2>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            {% for item in services %}
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="wpo-service-item">
+                    <div class="icon">
+                        <i><img src="{% static item.icon %}" alt=""></i>
+                    </div>
+                    <h2><a href="{% url 'services:detail' item.id %}">{{ item.title }}</a></h2>
+                    <p>{{ item.excerpt }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

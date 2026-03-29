@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Page not found — {{ site_name }}{% endblock %}
+{% block content %}
+<section class="error-404-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="content clearfix">
+                    <div class="error">
+                        <img src="{% static 'assets/images/error-404.svg' %}" alt="">
+                    </div>
+                    <div class="error-message">
+                        <h3>Oops! Page not found.</h3>
+                        <p>The page you are looking for does not exist or has been moved. Return to {{ site_name }} home and continue browsing.</p>
+                        <a href="{% url 'core:home' %}" class="theme-btn">Back to home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
