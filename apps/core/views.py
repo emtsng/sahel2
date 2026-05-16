@@ -1,11 +1,11 @@
 from django.http import Http404
 from django.shortcuts import render
+from django.urls import reverse
 
 from apps.core.demo_content import (
-    BLOG_POSTS,
-    PROJECT_ITEMS,
     SERVICE_ITEMS,
     SITE_NAME,
+    TEAM_MEMBERS,
 )
 
 
@@ -13,31 +13,51 @@ def home(request):
     hero_slides = [
         {
             'image': 'assets/images/slider/slide-1.jpg',
-            'title_before': 'With ',
+            'title_before': '',
             'title_span': SITE_NAME,
-            'title_after': ', nothing is impossible.',
+            'title_after': ' powers energy retail and logistics.',
             'text': (
-                'Industrial excellence, safety, and delivery—Sahel partners with you from concept '
-                'to commissioning.'
+                'We supply PMS, AGO, DPK, lubricants, and LPG, run dependable transport for liquid, '
+                'solid, and grain cargo, and operate a trusted fueling station.'
             ),
         },
     ]
     testimonials = [
         {
-            'name': 'Leslie Alexander',
-            'role': 'MD, Sahel partner network',
+            'name': 'Operations Partner',
+            'role': 'Fleet and depot customer',
             'image': 'assets/images/testimonial/img-1.jpg',
             'quote': (
-                'Sahel brought discipline and clarity to a complex retrofit. Communication stayed '
-                'sharp from kickoff to handover.'
+                'Sahel Enerlog delivers on schedule and keeps product handling professional from '
+                'pickup to final drop.'
             ),
         },
-    ]
-    team_members = [
         {
-            'name': 'Esther Howard',
-            'role': 'Creative Director',
-            'image': 'assets/images/team/img-1.jpg',
+            'name': 'Retail Fuel Buyer',
+            'role': 'Commercial customer',
+            'image': 'assets/images/testimonial/img-1.jpg',
+            'quote': (
+                'Their PMS and AGO supply is consistent, and the team communicates clearly about '
+                'availability and delivery windows.'
+            ),
+        },
+        {
+            'name': 'Logistics Client',
+            'role': 'Third-party cargo owner',
+            'image': 'assets/images/testimonial/img-1.jpg',
+            'quote': (
+                'We trust Sahel Enerlog for moving liquid and dry cargo safely. Their turnaround '
+                'time has improved our weekly dispatch plan.'
+            ),
+        },
+        {
+            'name': 'Station Customer',
+            'role': 'Fleet supervisor',
+            'image': 'assets/images/testimonial/img-1.jpg',
+            'quote': (
+                'The fueling station service is fast and reliable. Product quality and courteous '
+                'support keep our drivers coming back.'
+            ),
         },
     ]
     partners = [
@@ -47,11 +67,8 @@ def home(request):
         'nav_section': 'home',
         'hero_slides': hero_slides,
         'services': SERVICE_ITEMS,
-        'projects': PROJECT_ITEMS,
         'testimonials': testimonials,
-        'team_members': team_members,
         'partners': partners,
-        'posts': BLOG_POSTS,
     }
     return render(request, 'core/index.html', context)
 
@@ -77,6 +94,22 @@ def contact(request):
             'nav_section': 'contact',
             'page_title': 'Contact',
             'breadcrumbs': [{'label': 'Contact'}],
+        },
+    )
+
+
+def team(request):
+    return render(
+        request,
+        'core/team.html',
+        {
+            'nav_section': 'team',
+            'page_title': 'Our Team',
+            'breadcrumbs': [
+                {'url': reverse('core:about'), 'label': 'About'},
+                {'label': 'Team'},
+            ],
+            'team_members': TEAM_MEMBERS,
         },
     )
 

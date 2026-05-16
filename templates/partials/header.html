@@ -27,20 +27,18 @@
                                     <li>
                                         <a href="{% url 'core:home' %}" {% if nav_section == 'home' %}class="active"{% endif %}>Home</a>
                                     </li>
-                                    <li>
-                                        <a href="{% url 'core:about' %}" {% if nav_section == 'about' %}class="active"{% endif %}>About</a>
+                                    <li class="menu-item-has-children">
+                                        <a href="{% url 'core:about' %}" {% if nav_section == 'about' or nav_section == 'team' %}class="active"{% endif %}>About</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{% url 'core:about' %}" {% if nav_section == 'about' %}class="active"{% endif %}>About Us</a></li>
+                                            <li><a href="{% url 'core:team' %}" {% if nav_section == 'team' %}class="active"{% endif %}>Our Team</a></li>
+                                        </ul>
                                     </li>
                                     <li>
                                         <a href="{% url 'services:list' %}" {% if nav_section == 'services' %}class="active"{% endif %}>Services</a>
                                     </li>
                                     <li>
                                         <a href="{% url 'projects:list' %}" {% if nav_section == 'projects' %}class="active"{% endif %}>Projects</a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'blog:list' %}" {% if nav_section == 'blog' %}class="active"{% endif %}>Blog</a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'shop:list' %}" {% if nav_section == 'shop' %}class="active"{% endif %}>Shop</a>
                                     </li>
                                     <li>
                                         <a href="{% url 'core:contact' %}" {% if nav_section == 'contact' %}class="active"{% endif %}>Contact</a>
@@ -64,32 +62,6 @@
                                                 <button type="submit"><i class="fi flaticon-search"></i></button>
                                             </div>
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mini-cart">
-                                <button class="cart-toggle-btn" type="button"><i class="fi flaticon-shopping-cart"></i>
-                                    <span class="cart-count">1</span></button>
-                                <div class="mini-cart-content">
-                                    <button class="mini-cart-close" type="button"><i class="ti-close"></i></button>
-                                    <div class="mini-cart-items">
-                                        <div class="mini-cart-item clearfix">
-                                            <div class="mini-cart-item-image">
-                                                <a href="{% url 'shop:list' %}"><img src="{% static 'assets/images/shop/mini-cart/img-1.jpg' %}" alt=""></a>
-                                            </div>
-                                            <div class="mini-cart-item-des">
-                                                <a href="{% url 'shop:detail' 1 %}">Sahel catalog item</a>
-                                                <span class="mini-cart-item-price">$220.00 x 1</span>
-                                                <span class="mini-cart-item-quantity"><a href="#" aria-label="Remove"><i class="ti-close"></i></a></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mini-cart-action clearfix">
-                                        <span class="mini-checkout-price">Subtotal: <span>$220.00</span></span>
-                                        <div class="mini-btn">
-                                            <a href="{% url 'shop:list' %}" class="view-cart-btn s1">Shop</a>
-                                            <a href="{% url 'shop:list' %}" class="view-cart-btn">View catalog</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

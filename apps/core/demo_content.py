@@ -1,13 +1,44 @@
-"""Placeholder content until CMS/models exist. Each list is intentionally single-item."""
+"""Demo content used by templates before dynamic CMS data is available."""
 
-SITE_NAME = 'Sahel'
+SITE_NAME = 'Sahel Enerlog'
 
 SERVICE_ITEMS = [
     {
         'id': 1,
-        'title': 'Mechanical Engineering',
+        'title': 'Energy Product Retail',
         'icon': 'assets/images/icon/engineering.svg',
-        'excerpt': 'Consectetur adipiscing elit. Expert industrial solutions tailored by Sahel.',
+        'excerpt': (
+            'Reliable supply and retailing of PMS, AGO, DPK, lubricants, and LPG '
+            'for homes, fleets, and industrial users.'
+        ),
+        'hero_image': 'assets/images/service-single/1.jpg',
+        'gallery': (
+            'assets/images/service-single/2.jpg',
+            'assets/images/service-single/3.jpg',
+        ),
+    },
+    {
+        'id': 2,
+        'title': 'Energy and Cargo Logistics',
+        'icon': 'assets/images/icon/engineering.svg',
+        'excerpt': (
+            'End-to-end transportation for petroleum products and third-party cargo, '
+            'including liquid, solid, and grain shipments.'
+        ),
+        'hero_image': 'assets/images/service-single/1.jpg',
+        'gallery': (
+            'assets/images/service-single/2.jpg',
+            'assets/images/service-single/3.jpg',
+        ),
+    },
+    {
+        'id': 3,
+        'title': 'Fueling Station Operations',
+        'icon': 'assets/images/icon/engineering.svg',
+        'excerpt': (
+            'Safe and customer-focused fueling station services with dependable pump '
+            'availability and quality-controlled products.'
+        ),
         'hero_image': 'assets/images/service-single/1.jpg',
         'gallery': (
             'assets/images/service-single/2.jpg',
@@ -19,23 +50,73 @@ SERVICE_ITEMS = [
 PROJECT_ITEMS = [
     {
         'id': 1,
-        'title': 'Chemical Refinery',
+        'title': 'Retail Fuel Supply Program',
         'label': '01',
         'image': 'assets/images/projects/1.jpg',
         'hero_images': (
             'assets/images/project-single/1.jpg',
         ),
-        'tagline': 'Recent Project',
-        'client': 'Sahel',
-        'location': '7 Lake Street, London',
+        'tagline': 'Energy Retail',
+        'client': 'Commercial and residential buyers',
+        'location': 'Multi-city supply network',
         'meta': [
-            ('Location', '7 Lake Street, London'),
-            ('Client', 'Sahel'),
-            ('Architect', 'Sahel Studio'),
-            ('Project Type', 'Industrial'),
-            ('Duration', '6 Month'),
-            ('Completion', '15 Apr 2022'),
-            ('Share', 'Industrial, Business'),
+            ('Location', 'Multi-city supply network'),
+            ('Client', 'Commercial and residential buyers'),
+            ('Scope', 'PMS, AGO, DPK, lubricant and LPG retail'),
+            ('Project Type', 'Energy distribution'),
+            ('Duration', 'Ongoing operations'),
+            ('Delivery Model', 'Scheduled and on-demand dispatch'),
+            ('Priority', 'Product quality and availability'),
+        ],
+        'gallery': (
+            'assets/images/project-single/2.jpg',
+            'assets/images/project-single/3.jpg',
+        ),
+    },
+    {
+        'id': 2,
+        'title': 'Bulk Logistics and Haulage Service',
+        'label': '02',
+        'image': 'assets/images/projects/2.jpg',
+        'hero_images': (
+            'assets/images/project-single/1.jpg',
+        ),
+        'tagline': 'Logistics',
+        'client': 'Energy marketers and third-party cargo owners',
+        'location': 'Regional transport corridors',
+        'meta': [
+            ('Location', 'Regional transport corridors'),
+            ('Client', 'Energy marketers and cargo owners'),
+            ('Scope', 'Liquid, solid and grain cargo movement'),
+            ('Project Type', 'Logistics and transport'),
+            ('Duration', 'Year-round service'),
+            ('Fleet Focus', 'Safety, tracking and timely delivery'),
+            ('Coverage', 'Intercity and depot-to-site routes'),
+        ],
+        'gallery': (
+            'assets/images/project-single/2.jpg',
+            'assets/images/project-single/3.jpg',
+        ),
+    },
+    {
+        'id': 3,
+        'title': 'Company-Owned Fueling Station',
+        'label': '03',
+        'image': 'assets/images/projects/3.jpg',
+        'hero_images': (
+            'assets/images/project-single/1.jpg',
+        ),
+        'tagline': 'Station Operations',
+        'client': 'Walk-in motorists and fleet operators',
+        'location': 'Local service hub',
+        'meta': [
+            ('Location', 'Local service hub'),
+            ('Client', 'Walk-in motorists and fleet operators'),
+            ('Scope', 'Retail dispensing and station support'),
+            ('Project Type', 'Fuel station management'),
+            ('Duration', 'Daily operations'),
+            ('Safety', 'Pump protocol and quality assurance'),
+            ('Goal', 'Fast service and trusted supply'),
         ],
         'gallery': (
             'assets/images/project-single/2.jpg',
@@ -44,38 +125,33 @@ PROJECT_ITEMS = [
     },
 ]
 
-BLOG_POSTS = [
+TEAM_MEMBERS = [
     {
-        'id': 1,
-        'title': 'Why Industry Is a Juicy Target for Cyberattack.',
-        'excerpt': 'Industrial operations need resilient systems. Sahel outlines what to watch for.',
-        'author': 'Sahel Editorial',
-        'date_display': '24 Jun 2022',
-        'comments': 5,
-        'image': 'assets/images/blog/img-4.jpg',
-        'body_lead': (
-            'There are many variations of passages available, but the majority have suffered '
-            'alteration in some form. Sahel helps teams build practical security habits.'
-        ),
+        'name': 'Amina Yusuf',
+        'role': 'Managing Director',
+        'image': 'assets/images/team/img-1.jpg',
     },
-]
-
-SHOP_PRODUCTS = [
     {
-        'id': 1,
-        'title': 'Industrial grade miter saw',
-        'image': 'assets/images/shop/1.jpg',
-        'price_old': '$230.00',
-        'price': '$220.00',
-        'thumb_main': 'assets/images/shop/shop-single/1.jpg',
-        'thumbs': (
-            'assets/images/shop/shop-single/thumb/img-1.jpg',
-        ),
+        'name': 'Tunde Adewale',
+        'role': 'Head of Logistics',
+        'image': 'assets/images/team/img-1.jpg',
+    },
+    {
+        'name': 'Grace Okafor',
+        'role': 'Fuel Station Operations Lead',
+        'image': 'assets/images/team/img-1.jpg',
+    },
+    {
+        'name': 'Ibrahim Musa',
+        'role': 'Supply and Distribution Supervisor',
+        'image': 'assets/images/team/img-1.jpg',
     },
 ]
 
 FOOTER_SERVICES = [
-    {'id': 1, 'title': 'Mechanical Engineering'},
+    {'id': 1, 'title': 'Energy Product Retail'},
+    {'id': 2, 'title': 'Energy and Cargo Logistics'},
+    {'id': 3, 'title': 'Fueling Station Operations'},
 ]
 
 

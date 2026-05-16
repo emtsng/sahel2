@@ -42,10 +42,11 @@
                 <div class="wpo-about-text">
                     <div class="wpo-about-title">
                         <span class="sub">About Us</span>
-                        <h2>We’re more than an <span>industrial</span> partner</h2>
+                        <h2>Your trusted <span>energy and logistics</span> partner</h2>
                     </div>
-                    <h5>{{ site_name }} plans, builds, and supports critical infrastructure with disciplined crews and transparent reporting.</h5>
-                    <p>From commissioning through long-term maintenance, we align engineering, procurement, and site execution so your timelines stay credible and your teams stay informed.</p>
+                    <h5>{{ site_name }} is an energy and logistics services company focused on reliable product supply and safe transportation.</h5>
+                    <p>We retail crude oil by-products including PMS, AGO, DPK, lubricants, and LPG for homes, businesses, and industrial users.</p>
+                    <p>Our logistics arm handles both energy products and third-party cargo across liquid, solid, and grain shipments.</p>
                     <div class="btns">
                         <a href="{% url 'core:about' %}" class="theme-btn" tabindex="0">Discover more</a>
                     </div>
@@ -61,8 +62,8 @@
                             </div>
                             <div class="wpo-about-info">
                                 <div class="wpo-about-info-text">
-                                    <h2>{{ site_name }} lead</h2>
-                                    <span>Program director</span>
+                                    <h2>{{ site_name }}</h2>
+                                    <span>Energy and logistics team</span>
                                 </div>
                                 <div class="wpo-about-info-ratting">
                                     <ul>
@@ -76,7 +77,7 @@
                             </div>
                         </div>
                         <div class="wpo-about-content">
-                            <p>“{{ site_name }} kept every milestone visible and every handoff documented.”</p>
+                            <p>"Reliable fuel supply, dependable haulage, and service you can count on."</p>
                         </div>
                     </div>
                 </div>
@@ -90,7 +91,7 @@
         <div class="row">
             <div class="wpo-section-title">
                 <p>Our services</p>
-                <h2>We provide focused <span>services</span></h2>
+                <h2>What <span>{{ site_name }}</span> does</h2>
             </div>
         </div>
         <div class="row align-items-center">
@@ -102,35 +103,6 @@
                     </div>
                     <h2><a href="{% url 'services:detail' item.id %}">{{ item.title }}</a></h2>
                     <p>{{ item.excerpt }}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-
-<div class="wpo-project-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="wpo-section-title">
-                <p>Recent project</p>
-                <h2>Project <span>spotlight</span></h2>
-            </div>
-        </div>
-        <div class="row align-items-center justify-content-center">
-            {% for project in projects %}
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="wpo-project-item">
-                    <div class="wpo-project-img">
-                        <img src="{% static project.image %}" alt="">
-                        <div class="thumb">
-                            <h4>{{ project.label }}</h4>
-                        </div>
-                    </div>
-                    <div class="wpo-project-text">
-                        <h2><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></h2>
-                        <span>{{ project.tagline }}</span>
-                    </div>
                 </div>
             </div>
             {% endfor %}
@@ -167,40 +139,6 @@
     </div>
 </div>
 
-<section class="wpo-team-section section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="wpo-section-title">
-                <p>Our team</p>
-                <h2>Expert <span>member</span></h2>
-            </div>
-        </div>
-        <div class="wpo-team-wrap">
-            <div class="row justify-content-center">
-                {% for member in team_members %}
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="wpo-team-item">
-                        <div class="wpo-team-img">
-                            <img src="{% static member.image %}" alt="">
-                        </div>
-                        <div class="wpo-team-text">
-                            <h3><a href="{% url 'core:contact' %}">{{ member.name }}</a></h3>
-                            <span>{{ member.role }}</span>
-                            <ul>
-                                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                <li><a href="#"><i class="ti-instagram"></i></a></li>
-                                <li><a href="#"><i class="ti-google"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="partners-section">
     <h2 class="hidden">Partners</h2>
     <div class="container">
@@ -218,45 +156,11 @@
     </div>
 </section>
 
-<section class="wpo-blog-section section-padding" id="blog">
-    <div class="container">
-        <div class="row">
-            <div class="wpo-section-title">
-                <p>Latest news</p>
-                <h2>Our <span>blog</span></h2>
-            </div>
-        </div>
-        <div class="wpo-blog-items">
-            <div class="row justify-content-center">
-                {% for post in posts %}
-                <div class="col col-lg-4 col-md-6 col-12">
-                    <div class="wpo-blog-item">
-                        <div class="wpo-blog-img">
-                            <img src="{% static post.image %}" alt="">
-                            <div class="thumb">
-                                <ul>
-                                    <li>{{ post.date_display }}</li>
-                                    <li>By <a href="{% url 'blog:detail' post.id %}">{{ post.author }}</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="wpo-blog-content">
-                            <h2><a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></h2>
-                            <p>{{ post.excerpt }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="wpo-subscribe-section">
     <div class="container">
         <div class="wpo-subscribe-wrap">
             <div class="subscribe-text">
-                <h3>Subscribe to hear from {{ site_name }} about projects and safety briefings.</h3>
+                <h3>Subscribe for updates on fuel availability, logistics support, and station services.</h3>
             </div>
             <div class="subscribe-form">
                 <form action="#" method="post">
