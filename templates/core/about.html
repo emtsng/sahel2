@@ -66,7 +66,7 @@
                     <div class="icon">
                         <i><img src="{% static item.icon %}" alt=""></i>
                     </div>
-                    <h2><a href="{% url 'services:detail' item.id %}">{{ item.title }}</a></h2>
+                    <h2><a href="/services/{{ item.id }}/">{{ item.title }}</a></h2>
                     <p>{{ item.excerpt }}</p>
                 </div>
             </div>

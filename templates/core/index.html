@@ -48,7 +48,7 @@
                     <p>We retail crude oil by-products including PMS, AGO, DPK, lubricants, and LPG for homes, businesses, and industrial users.</p>
                     <p>Our logistics arm handles both energy products and third-party cargo across liquid, solid, and grain shipments.</p>
                     <div class="btns">
-                        <a href="{% url 'core:about' %}" class="theme-btn" tabindex="0">Discover more</a>
+                        <a href="/about/" class="theme-btn" tabindex="0">Discover more</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                     <div class="icon">
                         <i><img src="{% static item.icon %}" alt=""></i>
                     </div>
-                    <h2><a href="{% url 'services:detail' item.id %}">{{ item.title }}</a></h2>
+                    <h2><a href="/services/{{ item.id }}/">{{ item.title }}</a></h2>
                     <p>{{ item.excerpt }}</p>
                 </div>
             </div>

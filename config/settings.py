@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bakery',
     'apps.core',
     'apps.services',
     'apps.projects',
@@ -128,6 +129,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'build' / 'static'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -136,3 +138,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Bakery configuration for static site generation
+BUILD_DIR = str(BASE_DIR / 'build')
+BAKERY_VIEWS = (
+    'apps.core.bakery_views.HomeView',
+    'apps.core.bakery_views.AboutView',
+    'apps.core.bakery_views.ContactView',
+    'apps.core.bakery_views.TeamView',
+    'apps.services.bakery_views.ServiceListView',
+    'apps.services.bakery_views.ServiceDetailView',
+    'apps.projects.bakery_views.ProjectListView',
+    'apps.projects.bakery_views.ProjectDetailView',
+)

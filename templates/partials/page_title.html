@@ -5,7 +5,7 @@
                 <div class="wpo-breadcumb-wrap">
                     <h2>{{ page_title }}</h2>
                     <ol class="wpo-breadcumb-wrap">
-                        <li><a href="{% url 'core:home' %}">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         {% for b in breadcrumbs %}
                             {% if b.url %}
                                 <li><a href="{{ b.url }}">{{ b.label }}</a></li>
