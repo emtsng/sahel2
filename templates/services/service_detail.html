@@ -10,7 +10,7 @@
                 <div class="wpo-service-single-wrap">
                     <div class="wpo-service-single-item">
                         <div class="wpo-service-single-main-img">
-                            <img src="{% static service.hero_image %}" alt="">
+                            <img src="{% static service.hero_image %}" alt="{{ service.title }} operations">
                         </div>
                         <div class="wpo-service-single-title">
                             <h3>{{ service.title }}</h3>
@@ -21,7 +21,7 @@
                             {% for img in service.gallery %}
                             <div class="col-md-6 col-sm-6 col-12">
                                 <div class="wpo-p-details-img">
-                                    <img src="{% static img %}" alt="">
+                                    <img src="{% static img %}" alt="{{ service.title }} work in the energy sector">
                                 </div>
                             </div>
                             {% endfor %}

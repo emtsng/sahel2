@@ -2,36 +2,26 @@
 {% load static %}
 {% block title %}{{ site_name }}{% endblock %}
 {% block content %}
-<section class="wpo-hero-slider">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            {% for slide in hero_slides %}
-            <div class="swiper-slide">
-                <div class="slide-inner slide-bg-image" data-background="{% static slide.image %}">
-                    <div class="container-fluid">
-                        <div class="slide-content">
-                            <div data-swiper-parallax="300" class="slide-title">
-                                <h2>{{ slide.title_before }}<span>{{ slide.title_span }}</span>{{ slide.title_after }}</h2>
-                            </div>
-                            <div data-swiper-parallax="400" class="slide-text">
-                                <p>{{ slide.text }}</p>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div data-swiper-parallax="500" class="slide-btns">
-                                <ul>
-                                    <li class="video-holder">
-                                        <a href="https://www.youtube.com/embed/P7fi4hP_y80?autoplay=1" class="video-btn" data-type="iframe" tabindex="0"><i class="fi flaticon-play"></i></a>
-                                    </li>
-                                    <li class="video-text">Watch our video</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
+{% static 'assets/images/nigeria/dangote-refinery-site.jpg' as hero_image %}
+<section class="modern-hero" style="--hero-image: url('{{ hero_image }}');">
+    <div class="container hero-content">
+        <p class="eyebrow"><span></span> Energy · Logistics · Retail</p>
+        <h1>Powering supply.<br><span>Moving business forward.</span></h1>
+        <p class="hero-description">
+            Reliable energy products and safe, dependable transport—supporting businesses and communities across every mile.
+        </p>
+        <div class="hero-actions">
+            <a class="button" href="/services/">Explore our services <span aria-hidden="true">↗</span></a>
+            <a class="button button-quiet" href="/contact/">Talk to our team</a>
         </div>
-        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<section class="trust-strip" aria-label="Sahel Enerlog capabilities">
+    <div class="container trust-grid">
+        <div><span class="trust-index">01</span><p><strong>Energy products</strong><span>PMS, AGO, DPK, LPG &amp; lubricants</span></p></div>
+        <div><span class="trust-index">02</span><p><strong>Reliable logistics</strong><span>Liquid, solid &amp; grain cargo</span></p></div>
+        <div><span class="trust-index">03</span><p><strong>Fueling stations</strong><span>Safe, customer-first service</span></p></div>
     </div>
 </section>
 
@@ -48,17 +38,17 @@
                     <p>We retail crude oil by-products including PMS, AGO, DPK, lubricants, and LPG for homes, businesses, and industrial users.</p>
                     <p>Our logistics arm handles both energy products and third-party cargo across liquid, solid, and grain shipments.</p>
                     <div class="btns">
-                        <a href="/about/" class="theme-btn" tabindex="0">Discover more</a>
+                        <a href="/about/" class="button" tabindex="0">Discover more <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="wpo-about-img">
-                    <img src="{% static 'assets/images/about.jpg' %}" alt="">
+                    <img src="{% static 'assets/images/nigeria/dangote-refinery-site.jpg' %}" alt="Workers at the Dangote refinery site in Lagos, Nigeria">
                     <div class="wpo-about-item">
                         <div class="wpo-about-top">
                             <div class="wpo-about-thumb-img">
-                                <img src="{% static 'assets/images/about2.jpg' %}" alt="">
+                                <img src="{% static 'assets/images/nigeria/engineer-team.jpg' %}" alt="African engineers reviewing project plans">
                             </div>
                             <div class="wpo-about-info">
                                 <div class="wpo-about-info-text">
@@ -120,7 +110,7 @@
                         <div class="wpo-testimonial-item">
                             <div class="wpo-testimonial-top">
                                 <div class="wpo-testimonial-img">
-                                    <img src="{% static t.image %}" alt="">
+                                    <img src="{% static t.image %}" alt="{{ t.image_alt }}">
                                 </div>
                                 <div class="wpo-testimonial-info">
                                     <h2>{{ t.name }}</h2>

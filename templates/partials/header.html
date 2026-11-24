@@ -1,74 +1,23 @@
-{% load static %}
-<header id="header">
-    <div class="wpo-site-header wpo-header-style-1">
-        <nav class="navigation navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-3 col-3 d-lg-none dl-block">
-                        <div class="mobail-menu">
-                            <button type="button" class="navbar-toggler open-btn">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar first-angle"></span>
-                                <span class="icon-bar middle-angle"></span>
-                                <span class="icon-bar last-angle"></span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-6 col-6">
-                        <div class="navbar-wrap">
-                            <div class="navbar-header">
-                                <a class="navbar-brand logo" href="/">
-                                    <img src="{% static 'assets/images/logo.svg' %}" alt="{{ site_name }}">
-                                </a>
-                            </div>
-                            <div id="navbar" class="collapse navbar-collapse navigation-holder">
-                                <button class="menu-close"><i class="ti-close"></i></button>
-                                <ul class="nav navbar-nav mb-2 mb-lg-0">
-                                    <li>
-                                        <a href="/" {% if nav_section == 'home' %}class="active"{% endif %}>Home</a>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="/about/" {% if nav_section == 'about' or nav_section == 'team' %}class="active"{% endif %}>About</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="/about/" {% if nav_section == 'about' %}class="active"{% endif %}>About Us</a></li>
-                                            <li><a href="/about/team/" {% if nav_section == 'team' %}class="active"{% endif %}>Our Team</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="/services/" {% if nav_section == 'services' %}class="active"{% endif %}>Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="/projects/" {% if nav_section == 'projects' %}class="active"{% endif %}>Projects</a>
-                                    </li>
-                                    <li>
-                                        <a href="/contact/" {% if nav_section == 'contact' %}class="active"{% endif %}>Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-3 col-3">
-                        <div class="header-right">
-                            <div class="get-btn">
-                                <a class="theme-btn" href="/contact/">Get a Free Quote</a>
-                            </div>
-                            <div class="header-search-form-wrapper">
-                                <div class="cart-search-contact">
-                                    <button class="search-toggle-btn" type="button"><i class="fi flaticon-search"></i></button>
-                                    <div class="header-search-form">
-                                        <form action="#" method="get">
-                                            <div>
-                                                <input type="text" class="form-control" name="q" placeholder="Search here...">
-                                                <button type="submit"><i class="fi flaticon-search"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
+<header id="header" class="site-header">
+    <nav class="site-nav container">
+        <a class="brand" href="/" aria-label="{{ site_name }} home">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span class="brand-name"><strong>Sahel</strong><small>ENERLOG</small></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-controls="navbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <div id="navbar" class="site-nav-links">
+            <ul>
+                <li><a href="/" {% if nav_section == 'home' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="/about/" {% if nav_section == 'about' %}class="active"{% endif %}>About</a></li>
+                <li><a href="/about/team/" {% if nav_section == 'team' %}class="active"{% endif %}>Team</a></li>
+                <li><a href="/services/" {% if nav_section == 'services' %}class="active"{% endif %}>Services</a></li>
+                <li><a href="/projects/" {% if nav_section == 'projects' %}class="active"{% endif %}>Projects</a></li>
+                <li><a href="/contact/" {% if nav_section == 'contact' %}class="active"{% endif %}>Contact</a></li>
+            </ul>
+            <a class="button button-small" href="/contact/">Get a quote <span aria-hidden="true">↗</span></a>
+        </div>
+    </nav>
 </header>

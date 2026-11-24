@@ -11,10 +11,10 @@ SERVICE_ITEMS = [
             'Reliable supply and retailing of PMS, AGO, DPK, lubricants, and LPG '
             'for homes, fleets, and industrial users.'
         ),
-        'hero_image': 'assets/images/service-single/1.jpg',
+        'hero_image': 'assets/images/nigeria/dangote-refinery-site.jpg',
         'gallery': (
-            'assets/images/service-single/2.jpg',
-            'assets/images/service-single/3.jpg',
+            'assets/images/nigeria/engineer-team.jpg',
+            'assets/images/project-single/2.jpg',
         ),
     },
     {
@@ -25,10 +25,10 @@ SERVICE_ITEMS = [
             'End-to-end transportation for petroleum products and third-party cargo, '
             'including liquid, solid, and grain shipments.'
         ),
-        'hero_image': 'assets/images/service-single/1.jpg',
+        'hero_image': 'assets/images/nigeria/field-engineer.jpg',
         'gallery': (
-            'assets/images/service-single/2.jpg',
-            'assets/images/service-single/3.jpg',
+            'assets/images/nigeria/engineer-team.jpg',
+            'assets/images/project-single/2.jpg',
         ),
     },
     {
@@ -39,10 +39,10 @@ SERVICE_ITEMS = [
             'Safe and customer-focused fueling station services with dependable pump '
             'availability and quality-controlled products.'
         ),
-        'hero_image': 'assets/images/service-single/1.jpg',
+        'hero_image': 'assets/images/project-single/2.jpg',
         'gallery': (
-            'assets/images/service-single/2.jpg',
-            'assets/images/service-single/3.jpg',
+            'assets/images/nigeria/engineer-ppe.jpg',
+            'assets/images/nigeria/dangote-refinery-site.jpg',
         ),
     },
 ]
@@ -52,9 +52,9 @@ PROJECT_ITEMS = [
         'id': 1,
         'title': 'Retail Fuel Supply Program',
         'label': '01',
-        'image': 'assets/images/projects/1.jpg',
+        'image': 'assets/images/nigeria/dangote-refinery-site.jpg',
         'hero_images': (
-            'assets/images/project-single/1.jpg',
+            'assets/images/nigeria/dangote-refinery-site.jpg',
         ),
         'tagline': 'Energy Retail',
         'client': 'Commercial and residential buyers',
@@ -69,17 +69,17 @@ PROJECT_ITEMS = [
             ('Priority', 'Product quality and availability'),
         ],
         'gallery': (
+            'assets/images/nigeria/engineer-team.jpg',
             'assets/images/project-single/2.jpg',
-            'assets/images/project-single/3.jpg',
         ),
     },
     {
         'id': 2,
         'title': 'Bulk Logistics and Haulage Service',
         'label': '02',
-        'image': 'assets/images/projects/2.jpg',
+        'image': 'assets/images/nigeria/field-engineer.jpg',
         'hero_images': (
-            'assets/images/project-single/1.jpg',
+            'assets/images/nigeria/field-engineer.jpg',
         ),
         'tagline': 'Logistics',
         'client': 'Energy marketers and third-party cargo owners',
@@ -94,17 +94,17 @@ PROJECT_ITEMS = [
             ('Coverage', 'Intercity and depot-to-site routes'),
         ],
         'gallery': (
-            'assets/images/project-single/2.jpg',
-            'assets/images/project-single/3.jpg',
+            'assets/images/nigeria/engineer-team.jpg',
+            'assets/images/nigeria/engineer-ppe.jpg',
         ),
     },
     {
         'id': 3,
         'title': 'Company-Owned Fueling Station',
         'label': '03',
-        'image': 'assets/images/projects/3.jpg',
+        'image': 'assets/images/nigeria/engineer-ppe.jpg',
         'hero_images': (
-            'assets/images/project-single/1.jpg',
+            'assets/images/project-single/2.jpg',
         ),
         'tagline': 'Station Operations',
         'client': 'Walk-in motorists and fleet operators',
@@ -119,8 +119,8 @@ PROJECT_ITEMS = [
             ('Goal', 'Fast service and trusted supply'),
         ],
         'gallery': (
-            'assets/images/project-single/2.jpg',
-            'assets/images/project-single/3.jpg',
+            'assets/images/nigeria/engineer-team.jpg',
+            'assets/images/nigeria/dangote-refinery-site.jpg',
         ),
     },
 ]
@@ -129,22 +129,26 @@ TEAM_MEMBERS = [
     {
         'name': 'Amina Yusuf',
         'role': 'Managing Director',
-        'image': 'assets/images/team/img-1.jpg',
+        'image': 'assets/images/team/dummy-portrait-1.svg',
+        'image_alt': 'Illustrated placeholder portrait',
     },
     {
         'name': 'Tunde Adewale',
         'role': 'Head of Logistics',
-        'image': 'assets/images/team/img-1.jpg',
+        'image': 'assets/images/team/dummy-portrait-2.svg',
+        'image_alt': 'Illustrated placeholder portrait',
     },
     {
         'name': 'Grace Okafor',
         'role': 'Fuel Station Operations Lead',
-        'image': 'assets/images/team/img-1.jpg',
+        'image': 'assets/images/team/dummy-portrait-3.svg',
+        'image_alt': 'Illustrated placeholder portrait',
     },
     {
         'name': 'Ibrahim Musa',
         'role': 'Supply and Distribution Supervisor',
-        'image': 'assets/images/team/img-1.jpg',
+        'image': 'assets/images/team/dummy-portrait-4.svg',
+        'image_alt': 'Illustrated placeholder portrait',
     },
 ]
 

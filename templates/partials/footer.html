@@ -6,7 +6,10 @@
                 <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
                     <div class="widget about-widget">
                         <div class="logo widget-title">
-                            <a class="logo" href="/"><img src="{% static 'assets/images/logo.svg' %}" alt="{{ site_name }}"></a>
+                            <a class="brand footer-brand" href="/" aria-label="{{ site_name }} home">
+                                <span class="brand-mark" aria-hidden="true">S</span>
+                                <span class="brand-name"><strong>Sahel</strong><small>ENERLOG</small></span>
+                            </a>
                         </div>
                         <p>{{ site_name }} provides trusted energy retail, logistics transportation, and fueling station services.</p>
                         <ul>
@@ -49,7 +52,7 @@
                             <h3>Gallery</h3>
                         </div>
                         <ul class="d-flex flex-wrap">
-                            <li><a href="/projects/1/"><img src="{% static 'assets/images/instragram/1.jpg' %}" alt=""></a></li>
+                            <li><a href="/projects/1/"><img src="{% static 'assets/images/nigeria/dangote-refinery-site.jpg' %}" alt="Workers at the Dangote refinery site in Lagos, Nigeria"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -64,6 +67,11 @@
                         <li>&copy; {% now "Y" %} {{ site_name }}. All rights reserved.</li>
                         <li><a href="#">Terms of use</a> | <a href="#">Privacy policy</a></li>
                     </ul>
+                    <p class="photo-credit">
+                        Refinery image: <a href="https://commons.wikimedia.org/wiki/File:Vessel_at_Dangote_refinery_site,_Lagos.jpg">GodwinPaya, Wikimedia Commons</a>,
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Other stock workforce photos via
+                        <a href="https://www.pexels.com/license/">Pexels</a>.
+                    </p>
                 </div>
             </div>
         </div>
